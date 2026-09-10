@@ -4,7 +4,7 @@
   --muted: #6f6b64;
   --accent: #7b2f31;
   --accent-dark: #572123;
-  --page: min(1240px, calc(100vw - 96px));
+  --page: min(1360px, calc(100vw - 96px));
   --serif: Georgia, "Times New Roman", serif;
   --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -32,15 +32,15 @@ main {
 
 .hero-top {
   display: grid;
-  grid-template-columns: 235px minmax(0, 1fr);
+  grid-template-columns: 285px minmax(0, 1fr);
   align-items: center;
-  gap: 54px;
+  gap: 62px;
 }
 
 .portrait-wrap {
   position: relative;
   width: 100%;
-  max-width: 235px;
+  max-width: 285px;
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #d8d2c7;
@@ -67,7 +67,7 @@ main {
 .eyebrow {
   margin: 0 0 18px;
   color: var(--accent);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 750;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ main {
 
 h1 {
   margin: 0;
-  font: 500 clamp(62px, 6vw, 90px)/.92 var(--serif);
+  font: 500 clamp(66px, 6.2vw, 96px)/.92 var(--serif);
   letter-spacing: -.055em;
   white-space: nowrap;
 }
@@ -83,7 +83,7 @@ h1 {
 .role {
   margin: 28px 0 0;
   color: var(--muted);
-  font: 28px/1.42 var(--serif);
+  font: 30px/1.42 var(--serif);
 }
 
 .contact-links {
@@ -95,7 +95,7 @@ h1 {
 
 .contact-links a {
   color: var(--accent-dark);
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
   text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
   text-underline-offset: .22em;

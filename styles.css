@@ -4,7 +4,7 @@
   --muted: #6f6b64;
   --accent: #7b2f31;
   --accent-dark: #572123;
-  --page: min(1160px, calc(100vw - 48px));
+  --page: min(1100px, calc(100vw - 96px));
   --serif: Georgia, "Times New Roman", serif;
   --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -17,29 +17,30 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font: 16px/1.65 var(--sans);
+  font: 17px/1.65 var(--sans);
   -webkit-font-smoothing: antialiased;
 }
 
 main {
   width: var(--page);
-  min-height: 100svh;
   margin: 0 auto;
 }
 
 .intro {
-  min-height: 100svh;
+  padding: 64px 0 100px;
+}
+
+.hero-top {
   display: grid;
-  grid-template-columns: minmax(300px, .82fr) minmax(430px, 1.18fr);
+  grid-template-columns: 235px minmax(0, 1fr);
   align-items: center;
-  gap: clamp(50px, 8vw, 120px);
-  padding: 70px 0;
+  gap: 54px;
 }
 
 .portrait-wrap {
   position: relative;
   width: 100%;
-  max-width: 410px;
+  max-width: 235px;
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #d8d2c7;
@@ -66,7 +67,7 @@ main {
 .eyebrow {
   margin: 0 0 18px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 750;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -74,14 +75,15 @@ main {
 
 h1 {
   margin: 0;
-  font: 500 clamp(64px, 8vw, 116px)/.86 var(--serif);
+  font: 500 clamp(62px, 6vw, 90px)/.92 var(--serif);
   letter-spacing: -.055em;
+  white-space: nowrap;
 }
 
 .role {
-  margin: 34px 0 0;
+  margin: 28px 0 0;
   color: var(--muted);
-  font: 21px/1.45 var(--serif);
+  font: 28px/1.42 var(--serif);
 }
 
 .contact-links {
@@ -93,7 +95,7 @@ h1 {
 
 .contact-links a {
   color: var(--accent-dark);
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
   text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
   text-underline-offset: .22em;
@@ -102,55 +104,72 @@ h1 {
 .contact-links a:hover { color: var(--accent); }
 
 .about {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 40px;
-  padding: 110px 0 120px;
-  border-top: 1px solid #cbc4b8;
+  display: block;
+  margin-top: 72px;
 }
 
 .section-label {
   margin: 4px 0 18px;
   color: var(--accent);
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 750;
   letter-spacing: .14em;
   text-transform: uppercase;
 }
 
-.about-copy { max-width: 790px; }
+.about-copy {
+  width: min(960px, 100%);
+  margin-top: 26px;
+  font-size: 20px;
+  line-height: 1.75;
+}
 .about-copy p { margin: 0 0 22px; }
+.about-copy p:not(.lead) {
+  font-size: 30px;
+  text-align: justify;
+  hyphens: auto;
+}
 
 .lead {
-  font: 400 clamp(31px, 4.2vw, 56px)/1.13 var(--serif);
+  font: 400 clamp(46px, 4.8vw, 70px)/1.12 var(--serif);
   letter-spacing: -.025em;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1050px) {
   :root { --page: min(100% - 36px, 640px); }
 
   .intro {
-    grid-template-columns: 1fr;
-    gap: 38px;
     padding: 44px 0 58px;
   }
 
-  .portrait-wrap {
-    width: min(78vw, 360px);
-    justify-self: end;
+  .hero-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
-  h1 { font-size: clamp(58px, 18vw, 92px); }
+  .portrait-wrap {
+    width: min(62vw, 235px);
+    max-width: 235px;
+  }
+
+  h1 {
+    font-size: clamp(40px, 11vw, 62px);
+    letter-spacing: -.045em;
+  }
 
   .about {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 80px 0 90px;
+    margin-top: 70px;
+  }
+
+  .about-copy p:not(.lead) {
+    font-size: 22px;
+    text-align: left;
+    hyphens: none;
   }
 }
 
 @media print {
   body { background: white; color: black; }
   main { width: 100%; }
-  .intro { min-height: 0; padding: 0; }
+  .intro { padding: 0; }
 }
